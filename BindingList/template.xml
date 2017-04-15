@@ -1,0 +1,51 @@
+<template format="4"
+		revision="1"
+		name="Binding List Template"
+		description="create new binding list">
+
+	<category value="Other"/>
+
+	<parameter id="className"
+		name="List Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="ListClass"
+		help="The name of the functionality that requires MVP views"/>
+
+		<parameter id="modelName"
+		name="Model Name"
+		type="string"
+		constraints="class|nonempty"
+		default="modelClass"
+		help="Model that used in list"/>
+
+		<parameter id="usecaseName"
+		name="Usecase Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="usecaseClass"
+		help="usecase for fetch data"/>
+
+		<parameter
+            id="listItemLayoutName"
+            name="List Item Layout Name"
+            type="string"
+            constraints="layout|unique|nonempty"
+            default="list_item"
+            help="The name of the layout to create for the list item binding"/>
+
+		<parameter
+            id="capitaliseListItem"
+            name="capitalise above"
+            type="string"
+            constraints="class|unique|nonempty"
+            default="ListItem"
+            help="Capitalise above"/>
+
+
+
+
+	<globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
