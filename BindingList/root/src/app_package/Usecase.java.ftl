@@ -18,11 +18,12 @@ public class ${usecaseName}Usecase extends UsecaseBase<List<${modelName}>> {
 
     private final String TAG = this.getClass().getSimpleName();
 
-    MedrexaRepositories medrexaRepositories;
+    ProjectApiRepository apiRepository;
 
     @Inject
-    public ${usecaseName}Usecase(MedrexaRepositories medrexaRepositories) {
-        this.medrexaRepositories = medrexaRepositories;
+    public ${usecaseName}Usecase(ProjectApiRepository apiRepository) {
+         this.apiRepository = apiRepository;
+
 
     }
 
@@ -30,7 +31,7 @@ public class ${usecaseName}Usecase extends UsecaseBase<List<${modelName}>> {
     @Override
     public Observable<List<${modelName}>> buildObservable() {
 
-        return null;
+         return apiRepository.getListData().flatMap(listBaseResponseData -> Observable.just(listBaseResponseData.getData()));
     }
 
     public static class Request{

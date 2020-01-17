@@ -29,6 +29,7 @@ public class ${className}Presenter extends BasePresenterImpl implements  ${class
 
     }
 
+
     @Override
     public BaseView getView() {
         return view;
@@ -37,5 +38,12 @@ public class ${className}Presenter extends BasePresenterImpl implements  ${class
     @Override
     public void attachView(BaseView v) {
         this.view = (${className}Contract.View)v;
+    }
+
+    @Override
+    public void getListData() {
+
+        compositeSubscription.add(usecase.execute().subscribe(view::onListData,this::onError));
+
     }
 }

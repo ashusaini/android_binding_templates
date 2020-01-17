@@ -22,7 +22,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginRight="@dimen/_8sdp"
-        android:onClick="@{view -> listener.onItemClick(model,0)}"
+        android:onClick="@{view -> listener.onItemClick(view,model,0)}"
         android:layout_marginTop="@dimen/_8sdp">
 
                 <TextView
@@ -33,7 +33,6 @@
                 android:textSize="@dimen/_14sdp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="@dimen/_4sdp"
-                android:layout_toEndOf="@+id/imageView2"
                 android:layout_marginStart="16dp"
                 />
 

@@ -1,6 +1,6 @@
 package ${packageName};
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 
 import com.charpixel.baseandroidproject.common.BaseActivity;
 import ${applicationPackage}.R;

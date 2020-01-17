@@ -3,9 +3,9 @@ package ${packageName};
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.SearchView;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +72,7 @@ public class ${className}Fragment extends BaseFragment implements ${className}Co
 
 
         presenter.attachView(this);
+        presenter.getListData();
 
         binding.add.setOnClickListener(v -> {
 
@@ -92,7 +93,7 @@ public class ${className}Fragment extends BaseFragment implements ${className}Co
 
 
     public void refresh(){
-        
+
     }
 
 
@@ -150,9 +151,14 @@ public class ${className}Fragment extends BaseFragment implements ${className}Co
     }
 
     @Override
-    public void onItemClick(${modelName} item, int clickType) {
+    public void onItemClick(View view, ${modelName} item, int clickType) {
 
 
+    }
+
+    @Override
+    public void onListData(List<${modelName}> list) {
+        adapter.swapItems(list);
     }
 
 
